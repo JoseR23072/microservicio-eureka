@@ -1,22 +1,26 @@
-# src/main/resources/bootstrap.yml
+# src/main/resources/application.yml
+
 spring:
   application:
     name: msvc-eureka
-  server:
+  # Configuración de Eureka Server
+  cloud:
+    config:
+      enabled: false    # si ya no usas Spring Cloud Config
+server:
   port: ${EUREKA_SERVER_PORT:8761}
 
-  eureka:
-    instance:
-      hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
-    client:
-      register-with-eureka: false
-      fetch-registry: false
-      service-url:
-        defaultZone: http://${EUREKA_INSTANCE_HOSTNAME:localhost}:${SERVER_PORT}/eureka/
+eureka:
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:localhost}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${EUREKA_INSTANCE_HOSTNAME:localhost}:${EUREKA_SERVER_PORT:8761}/eureka/
 
-  management:
-    metrics:
-      binders:
-        system:
-          enabled: false
-
+management:
+  metrics:
+    binders:
+      system:
+        enabled: false    # desactiva ProcessorMetrics
