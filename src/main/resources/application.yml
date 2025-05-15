@@ -1,6 +1,10 @@
 # src/main/resources/application.yml
 
 spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.actuate.autoconfigure.metrics.SystemMetricsAutoConfiguration
+      - org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration
   application:
     name: msvc-eureka
   # Configuración de Eureka Server
