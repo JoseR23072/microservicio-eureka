@@ -4,7 +4,7 @@ spring:
       - org.springframework.boot.actuate.autoconfigure.metrics.SystemMetricsAutoConfiguration
       - org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration
   application:
-    name: msvc-eureka
+    name: microservicio-eureka
 
   config:
     import: optional:configserver:${CONFIG_URL:http://microservicio-configuraciones.railway.internal:8888}
