@@ -8,10 +8,3 @@ spring:
 
   config:
     import: optional:configserver:${CONFIG_URL:http://microservicio-configuraciones.railway.internal:8888}
-
-logging:
-  level:
-    root: INFO               # Nivel general (puedes poner DEBUG o TRACE)
-    org.springframework: DEBUG
-    org.springframework.cloud.netflix.eureka.server: DEBUG
-    com.netflix.eureka: DEBUG
